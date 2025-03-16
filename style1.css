@@ -1,0 +1,266 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, h1, h2, h3, h4, h5, h6 {
+            scrollbar-width: thin;
+            scrollbar-color: rgb(221, 1, 246) white;
+            font-family: 'IM Fell English', serif;
+            background-color: #000000;
+            color: #ffffff; /* A golden hue, worthy of ancient texts */
+            text-align: center;
+        }
+    header {
+        background-color: #000000;
+        padding: 1em;
+        position: fixed; 
+        top: 0; 
+        width: 100%;
+        z-index: 1000; 
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        animation-delay: 0.5s;
+    }
+    nav ul {
+        position: relative; 
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2vw;
+        width: 100%;
+        padding-right: 20px;
+    }
+    ul {
+        list-style: none;
+    }   
+    li {
+        display: inline;
+        color: black;
+    }
+    a:visited, a:link {
+        color: black;
+        text-decoration: none;
+    }
+    .button {
+        background-color: #f9f9f9;
+        color:#d4af37;
+        border: black;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.7s, color 1s;
+    }
+    .button:hover {
+        background-color: rgb(3, 3, 3);
+        color: rgb(255, 255, 255);
+    }
+    .button2 {
+        background-color: #ffffff;
+        color: black;
+        border: black;
+        padding: 15px 30px; /* Increase padding to make the buttons bigger */
+        font-size: 18px; /* Increase font size */
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.7s, color 1s;
+    }
+    .button2:hover {
+        background-color: rgb(3, 3, 3);
+        color: rgb(255, 255, 255);
+    }
+    .underline{
+        background: none;
+        border: none;
+        font-size: 40;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        position: relative;
+        padding: 10px 20px 2px 0px;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+    }
+    .underline::after{
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: 1px;
+        width: 85%;
+        height: 2px;
+        background-color: rgb(0, 0, 0);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.7s ease-in-out;
+    }
+    .underline:hover::after{
+        transform: scaleX(1.12);
+    }
+    .underline-button, .underline-button1 {
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        position: relative;
+        padding: 10px 20px 2px;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+    }
+    .underline-button::after, .underline-button1::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: 1px;
+        width: 75%;
+        height: 2px;
+        background-color: rgb(255, 255, 255);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.7s ease-in-out;
+    }
+    .underline-button:hover::after {
+        transform: scaleX(1.12);
+    }
+    .underline-button1:hover::after {
+        transform: scaleX(1);
+    }
+    .image {
+        border-radius: 50%;
+        width: auto;
+        height: 70%;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .text-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 100px;
+    }
+    h2{
+        text-align: center;
+        font-size: 2em;
+        overflow: hidden;
+        border-right: .15em solid black;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: 
+            typewriter 2s steps(40, end),
+            blink-caret .75s step-end infinite;
+    }
+    .button-container {
+        display: flex;
+        gap: 10px; /* Adjust the gap between buttons as needed */
+        justify-content: center; /* Center the buttons */
+        margin-top: 20px; /* Add some margin to the top */
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        animation-delay: 1s;
+    }
+    .hidden {
+        display: none;
+    }
+    .visible {
+        display: block;
+        margin:20px 2em 0px 2em;
+        font-size: 1.5em;
+        opacity: 0;
+        animation: fadeInText 1s forwards;
+    }
+    .skills-container {
+        display: none; /* Hide the skills container initially */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .skills-container.visible {
+        display: flex; /* Show the skills container when visible class is added */
+    }
+    .skills-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .skills-images img {
+        width: 20%;
+        height: 20%;
+    }
+    .integrity-container {
+        display: none; /* Hide the integrity container initially */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .integrity-container.visible {
+        display: flex; /* Show the integrity container when visible class is added */
+    }
+    .integrity-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .integrity-images img {
+        width: 40%;
+        height: auto;
+    }
+    @keyframes typewriter {
+        from { width: 0; }
+        to { width: 47%; }
+    }
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: black; }
+    }
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+    @keyframes fadeInText {
+        to { opacity: 1; }
+    }
+    .typewriter-finished {
+        border-right: none;
+    }
+    .audio {
+        display: none;
+    }
+    .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure footer is above other content */
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            padding:7px;
+            border:3px;
+            border-radius: 19px;
+            text-decoration: none;
+            transition: color 0.9s;
+            transition: background-color 0.9s;
+        }
+
+        .social-icons a:hover {
+            color: #000000;
+            background-color: #ffffff;
+            padding:7px;
+            border:3px;
+            border-radius: 19px;
+        }
+        .content {
+            margin-bottom: 20%; /* Add padding to ensure content doesn't go under the footer */
+        }

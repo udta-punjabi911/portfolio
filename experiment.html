@@ -1,0 +1,81 @@
+<div class="box">
+    <h2 style="background:none; font-weight: bold;" class="montserrat-he">ABOUT ME!</h2>
+</div>
+<div class="aboutme">
+    <p>Well, hey there I am Aditya Arora, a bakchod SRMIST student by day and batman at night. I think I have a great humor but again I don't have a girlfriend so you know...</p>
+    <p>I love music, dancing and making plans that I know i can never execute with my friends like A TRIP TO GOA.</p>
+    <p>I have now concured that no matter when I wake up I will always be late for class or any acitivity submission but that's that.</p>
+</div>
+<div class="music">
+    <h2 style="background: none;">Listen to my favorite song:</h2>
+    <audio controls>
+        <source src="Clair-de-lune-piano.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    </div>
+<div class=" box skills">
+    <h2 style="background:none; font-weight: bold;" class="montserrat-he">SKILLS</h2>
+</div>
+
+
+
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 6px solid black;
+    width: 20%;
+    height: 20%;
+    margin: 30px auto; 
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.montserrat-he{
+font-family: "Montserrat", sans-serif;
+font-optical-sizing: auto;
+font-weight: bold;
+letter-spacing: 9px;
+font-style: normal;
+opacity: 0; /* Start hidden */
+transition: opacity 2s ease-in; /* Fade-in transition */
+}
+.aboutme{
+    margin-top:0px;
+    text-align: center;
+    font-size: larger;
+    opacity: 0; /* Start hidden */
+    transition: opacity 2s ease-in; /* Fade-in transition */
+}
+.music {
+    background-color: none; /* Match the webpage background color */
+    text-align: center;
+    margin-top: 20px;
+}
+audio {
+    width: 6%; /* Adjust width to fit the play button */
+}
+audio::-webkit-media-controls-panel {
+    display: flex;
+    justify-content: center;
+}
+audio::-webkit-media-controls-play-button {
+    display: block;
+}
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button,
+audio::-webkit-media-controls-fullscreen-button,
+audio::-webkit-media-controls-rewind-button,
+audio::-webkit-media-controls-return-to-realtime-button,
+audio::-webkit-media-controls-toggle-closed-captions-button {
+    display: none;
+}
+.skills {
+    background-color: none; 
+    text-align: center;
+    margin-top: 20px;
+}

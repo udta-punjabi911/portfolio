@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="style1.css">
+<style>
+    .contacts{
+        display:flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .contacts img{
+        margin-top: 6em;
+        width: 70%;
+        height:auto;
+        opacity: 0;
+        transition: opacity 2s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .contacts img.fade-in {
+        opacity: 1;
+    }
+    .contacts img:hover {
+        transform: scale(1.5);
+    }
+</style>
+</head>
+<body onload="fadeInImages()">
+    <header>
+        <nav>
+            <img src="pure_black_bg_logo.png" alt="photo thi yahan meri" class="image">
+            <ul class="item-1">
+                <li><a href="index.html" class="underline-button1" style="color:white">Home</a></li>
+                <li><a href="about.html" style="color:white" class="underline-button">About Me!</a></li>
+                <li><a href="experiment.html" style="color:white" class="underline-button">Danger</a></li>
+                <li><a href="contact.html"  class="button">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contacts">
+        <a href="https://www.facebook.com" target="_blank"><img src="facebook.jpeg" alt="Facebook"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="inst.jpeg" alt="Instagram"></a>
+        <a href="https://www.example.com" target="_blank"><img src="Gemini_Generated_Image_fytmjofytmjofytm.jpeg" alt="Example"></a>
+        <a href="https://www.github.com" target="_blank"><img src="gitbhub.jpeg" alt="GitHub"></a>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 Aditya Arora | All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a>
+            </div>
+    </footer>
+    <script>
+        function fadeInImages() {
+            const images = document.querySelectorAll('.contacts img');
+            images.forEach((img, index) => {
+                setTimeout(() => {
+                    img.classList.add('fade-in');
+                }, index * 500); // delay each image by 0.5 seconds
+            });
+        }
+    </script>
+</body>
+</html>

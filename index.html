@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onload="fadeInHeadings()">
+    <header>
+        <nav>
+            <img src="pure_black_bg_logo.png" alt="photo thi yahan meri" class="image">
+            <ul class="item-1">
+                <li><a href="home.html" class="underline-button1" style="color:white">Home</a></li>
+                <li><a href="about.html" style="color:white" class="underline-button">About Me!</a></li>
+                <li><a href="experiment.html" style="color:white" class="underline-button">Danger</a></li>
+                <li><a href="contact.html"  class="button">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="text-container">
+        <div>
+            <h3>Hi I am,</h3>
+            <h1><a href="about.html" class="underline">Aditya Arora</a></h1>
+            <h4 id="anime">Website banata hua ek nadan parinda</h4>
+        </div>
+        <div class="photo-container">
+            <img src="IMG_6566.jpeg" alt="photo thi yahan meri" class="photo">
+            <div class="photo-text">Not here, click on me (not in a naughty way)</div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 Aditya Arora | All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a>
+            </div>
+    </footer>
+    <script>
+        function fadeInOnScroll() {
+            const elements = document.querySelectorAll('h3, h1, h4, .montserrat-he, .aboutme, .photo');
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    element.style.opacity = 1;
+                }
+            });
+        }
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+</body>
+</html>
