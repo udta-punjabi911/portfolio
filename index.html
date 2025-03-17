@@ -1,11 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PORTFOLIO</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+        <title>PORTFOLIO</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            /* Media query for iPhone 13 Pro */
+            @media only screen and (max-width: 800px) {
+                body{
+                    overflow-x: hidden;
+                    overflow-wrap: anywhere;
+                }
+            header {
+        background-color: #000000;
+        padding: 1em;
+        position: fixed; 
+        top: 0; 
+        width: 100%;
+        z-index: 1000; 
+    }
+    nav ul {
+        position: relative; 
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1vw;
+        width: 100%;
+        padding-right: 1%;
+    }
+    ul {
+        list-style: none;
+    }   
+    li {
+        display: inline;
+        color: black;
+    }
+    a:visited, a:link {
+        color: black;
+        text-decoration: none;
+    }
+    .image {
+        border-radius: 50%;
+        width: auto;
+        height: 70%;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .button {
+        background-color: rgba(255, 255, 255, 0.648);
+        color: black;
+        border: black;
+        padding: 5px 10px;
+        font-size: smaller;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.7s, color 1s;
+    }
+    .button:hover {
+        background-color: rgb(3, 3, 3);
+        color: rgb(255, 255, 255);
+    }
+    .underline{
+        background: none;
+        border: none;
+        font-size: 40;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        position: relative;
+        padding: 10px 20px 2px 0px;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+    }
+    .underline::after{
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: 1px;
+        width: 85%;
+        height: 2px;
+        background-color: rgb(0, 0, 0);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.7s ease-in-out;
+    }
+    .underline:hover::after{
+        transform: scaleX(1.12);
+    }
+    .underline-button, .underline-button1 {
+        background: none;
+        border: none;
+        font-size: 15px;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        position: relative;
+        padding: 10px 20px 2px;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+    }
+    .underline-button2 {
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        position: relative;
+        padding: 10px 20px 2px;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+    }
+    .underline-button::after, .underline-button1::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: 1px;
+        width: 75%;
+        height: 2px;
+        background-color: rgb(255, 255, 255);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.7s ease-in-out;
+    }
+    .underline-button:hover::after {
+        transform: scaleX(1.12);
+    }
+    .underline-button1:hover::after {
+        transform: scaleX(1);
+    }
+
+    .text-container {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        transform: translateX(30%); 
+        margin-top: 100px;
+    }
+    h3 {
+        font-size: 5vw; /* Increase font size */
+        background: none;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        text-align: left;
+        opacity: 1; 
+        transition: opacity 2s ease-in; 
+    }
+    h1 {
+        font-size: 5vw; /* Increase font size */
+        background: none;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        text-align: left;
+        opacity: 1; /* Start hidden */
+        transition: opacity 2s ease-in; /* Fade-in transition */
+    }
+    h4{
+        font-size: 4vw; /* Increase font size */
+        color: rgba(49, 45, 45, 0.862);
+        background: none;
+        font-weight: bold;
+        text-align: left;
+        opacity: 1; /* Start hidden */
+        transition: opacity 2s ease-in; /* Fade-in transition */
+    }
+    .photo-container {
+        position: absolute;
+        width: 20%;
+        height: 100%;
+        margin-top: 5%;
+        margin-left: 20px;
+        transform: translateX(60%);
+        transform: translateY(90%);
+        margin-top: 100px;
+    }
+
+    .photo {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        opacity: 0; 
+        transition: opacity 2s ease-in, transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    }
+
+    .photo:hover {
+        transform: scale(1.1);
+        filter: brightness(0.7);
+    }
+    .photo-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2vw;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .photo-container:hover .photo-text {
+        opacity: 1;
+    }
+    .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #7d0da3;
+        }
+
+        }
+    </style>
 </head>
 <body onload="fadeInHeadings()">
     <header>
@@ -21,9 +245,9 @@
     </header>
     <div class="text-container">
         <div>
-            <h3>Hi I am,</h3>
-            <h1><a href="about.html" class="underline">Aditya Arora</a></h1>
-            <h4 id="anime">Website banata hua ek nadan parinda</h4>
+            <h3>Hi I am,</h8>
+            <h1><a href="about.html" class="underline">Aditya Arora</a></h5>
+            <h4 id="anime">Website banata hua ek nadan parinda</h10>
         </div>
         <div class="photo-container">
             <img src="IMG_6566.jpeg" alt="photo thi yahan meri" class="photo">
@@ -36,7 +260,7 @@
             <a href="#">Facebook</a> |
             <a href="#">Instagram</a> |
             <a href="#">Twitter</a>
-            </div>
+        </div>
     </footer>
     <script>
         function fadeInOnScroll() {
