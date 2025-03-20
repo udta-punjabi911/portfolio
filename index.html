@@ -1,253 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PORTFOLIO</title>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <style>
-            /* Media query for iPhone 13 Pro */
-            @media only screen and (max-width: 370px) {
-                body{
-                
-                    overflow-wrap: anywhere;
-                }
-            header {
-        background-color: #000000;
-        padding: 1em;
-        position: fixed; 
-        top: 0; 
-        width: 100%;
-        z-index: 1000; 
-    }
-    nav ul {
-        position: relative; 
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 1vw;
-        width: 100%;
-        padding-right: 1%;
-    }
-    ul {
-        list-style: none;
-    }   
-    li {
-        display: inline;
-        color: black;
-    }
-    a:visited, a:link {
-        color: black;
-        text-decoration: none;
-    }
-    .image {
-        border-radius: 50%;
-        width: auto;
-        height: 70%;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-    }
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    .button {
-        background-color: rgba(255, 255, 255, 0.648);
-        color: black;
-        border: black;
-        padding: 5px 10px;
-        font-size: smaller;
-        border-radius: 25px;
-        cursor: pointer;
-        transition: background-color 0.7s, color 1s;
-    }
-    .button:hover {
-        background-color: rgb(3, 3, 3);
-        color: rgb(255, 255, 255);
-    }
-    .underline{
-        background: none;
-        border: none;
-        font-size: 40;
-        color: rgb(255, 255, 255);
-        cursor: pointer;
-        position: relative;
-        padding: 10px 20px 2px 0px;
-        transition: all 0.3s ease-in-out;
-        overflow: hidden;
-    }
-    .underline::after{
-        content: "";
-        position: absolute;
-        left: 0px;
-        bottom: 1px;
-        width: 85%;
-        height: 2px;
-        background-color: rgb(0, 0, 0);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.7s ease-in-out;
-    }
-    .underline:hover::after{
-        transform: scaleX(1.12);
-    }
-    .underline-button, .underline-button1 {
-        background: none;
-        border: none;
-        font-size: 15px;
-        color: rgb(255, 255, 255);
-        cursor: pointer;
-        position: relative;
-        padding: 10px 20px 2px;
-        transition: all 0.3s ease-in-out;
-        overflow: hidden;
-    }
-    .underline-button2 {
-        background: none;
-        border: none;
-        font-size: 18px;
-        color: rgb(255, 255, 255);
-        cursor: pointer;
-        position: relative;
-        padding: 10px 20px 2px;
-        transition: all 0.3s ease-in-out;
-        overflow: hidden;
-    }
-    .underline-button::after, .underline-button1::after {
-        content: "";
-        position: absolute;
-        left: 10px;
-        bottom: 1px;
-        width: 75%;
-        height: 2px;
-        background-color: rgb(255, 255, 255);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.7s ease-in-out;
-    }
-    .underline-button:hover::after {
-        transform: scaleX(1.12);
-    }
-    .underline-button1:hover::after {
-        transform: scaleX(1);
-    }
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Media query for iPhone 13 Pro */
+        @media only screen and (max-width: 700px) {
+            body {
+                /* overflow: scroll;
+                overflow-wrap: anywhere;    
+                overflow: hidden; */
+            }
 
-    .text-container {
-        display: flex;
-        flex-direction: row; 
-        align-items: center; 
-        transform: translateX(30%); 
-        margin-top: 100px;
-    }
-    h3 {
-        font-size: 5vw; /* Increase font size */
-        background: none;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-        text-align: left;
-        opacity: 1; 
-        transition: opacity 2s ease-in; 
-    }
-    h1 {
-        font-size: 5vw; /* Increase font size */
-        background: none;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-        text-align: left;
-        opacity: 1; /* Start hidden */
-        transition: opacity 2s ease-in; /* Fade-in transition */
-    }
-    h4{
-        font-size: 4vw; /* Increase font size */
-        color: rgba(49, 45, 45, 0.862);
-        background: none;
-        font-weight: bold;
-        text-align: left;
-        opacity: 1; /* Start hidden */
-        transition: opacity 2s ease-in; /* Fade-in transition */
-    }
-    .photo-container {
-        position: absolute;
-        width: 20%;
-        height: 100%;
-        margin-top: 5%;
-        margin-left: 20px;
-        transform: translateX(60%);
-        transform: translateY(90%);
-        margin-top: 100px;
-    }
+            header {
+                background-color: #000000;
+                padding: 1.6em;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }
 
-    .photo {
-        width: 100%;
-        height: 100%;
-        border-radius: 100%;
-        opacity: 0; 
-        transition: opacity 2s ease-in, transform 0.5s ease-in-out, filter 0.5s ease-in-out;
-    }
+            nav ul {
+                display: none;
+                /* Hide the menu */
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                background-color: #000;
+                border-radius: 5px;
+                width: 150px;
+                padding: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                opacity: 0;
+                transition: opacity 0.5s ease, transform 0.5s ease;
+                transform: translateY(-10px);
+            }
 
-    .photo:hover {
-        transform: scale(1.1);
-        filter: brightness(0.7);
-    }
-    .photo-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 2vw;
-        text-align: center;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-    }
+            nav ul.show {
+                display: flex;
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-    .photo-container:hover .photo-text {
-        opacity: 1;
-    }
-    .footer {
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .social-icons {
-            margin-top: 10px;
-        }
+            .menu-button {
+                display: block;
+                background-color: #000;
+                border: none;
+                color: #fff;
+                padding: 1%;
+                font-size: 20px;
+                cursor: pointer;
+                position: absolute;
+                top: 0.2em;
+                right: 0.4em;
+                z-index: 1001;
+                transition: transform 1s ease-in-out 1s;
+            }
 
-        .social-icons a {
-            color: white;
-            margin: 0 10px;
-            font-size: 20px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
 
-        .social-icons a:hover {
-            color: #7d0da3;
-        }
+            .menu-button span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                background-color: #fff;
+                transition: all 0.3s ease;
+            }
 
+            .menu-button.open span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 6px);
+            }
+
+            .menu-button.open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-button.open span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -6px);
+            }
+
+            .menu-button:hover {
+                background-color: #020202;
+            }
+            ul {
+                list-style: none;
+            }
+
+            li {
+                display: block;
+                color: white;
+                padding: 10px 0;
+            }
+
+            a:visited,
+            a:link {
+                color: white;
+                text-decoration: none;
+            }
+
+            .image {
+                border-radius: 50%;
+                width: auto;
+                height: 70%;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+
+            .button {
+                background-color: rgba(255, 255, 255, 0.648);
+                color: black;
+                border: black;
+                padding: 5px 10px;
+                font-size: smaller;
+                border-radius: 25px;
+                cursor: pointer;
+                transition: background-color 0.7s, color 1s;
+            }
+
+            .button:hover {
+                background-color: rgb(3, 3, 3);
+                color: rgb(255, 255, 255);
+            }
+
+            .underline {
+                background: none;
+                border: none;
+                font-size: 40;
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+                position: relative;
+                padding: 10px 20px 2px 0px;
+                transition: all 0.3s ease-in-out;
+                overflow: hidden;
+            }
+
+            .underline::after {
+                content: "";
+                position: absolute;
+                left: 0px;
+                bottom: 1px;
+                width: 85%;
+                height: 2px;
+                background-color: rgb(0, 0, 0);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.7s ease-in-out;
+            }
+
+            .underline:hover::after {
+                transform: scaleX(1.12);
+            }
+
+            .underline-button,
+            .underline-button1 {
+                background: none;
+                border: none;
+                font-size: 15px;
+                color: rgb(0, 0, 0);
+                cursor: pointer;
+                position: relative;
+                padding: 10px 20px 2px;
+                transition: all 0.3s ease-in-out;
+                overflow: hidden;
+            }
+
+            .underline-button2 {
+                background: none;
+                border: none;
+                font-size: 18px;
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+                position: relative;
+                padding: 10px 20px 2px;
+                transition: all 0.3s ease-in-out;
+                overflow: hidden;
+            }
+
+            .underline-button::after,
+            .underline-button1::after {
+                content: "";
+                position: absolute;
+                left: 10px;
+                bottom: 1px;
+                width: 75%;
+                height: 2px;
+                background-color: rgb(255, 255, 255);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.7s ease-in-out;
+            }
+
+            .underline-button:hover::after {
+                transform: scaleX(1.12);
+            }
+
+            .underline-button1:hover::after {
+                transform: scaleX(1);
+            }
+
+            .text-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 100px;
+            }
+
+            h3 {
+                font-size: 5vw;
+                background: none;
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+                text-align: left;
+                opacity: 1;
+                transition: opacity 2s ease-in;
+                transform: translateX(-30%);
+            }
+
+            h1 {
+                transform: translateX(-30%);
+                font-size: 5vw;
+                background: none;
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+                text-align: left;
+                opacity: 1;
+                transition: opacity 2s ease-in;
+            }
+
+            h4 {
+                transform: translateX(-30%);
+                font-size: 4vw;
+                /* Increase font size */
+                color: rgba(49, 45, 45, 0.862);
+                background: none;
+                font-weight: bold;
+                text-align: left;
+                opacity: 1;
+                /* Start hidden */
+                transition: opacity 2s ease-in;
+                /* Fade-in transition */
+            }
+
+            .photo-container {
+                position: absolute;
+                width: 20%;
+                height: 100%;
+                margin-top: 5%;
+                transform: translateX(-60%);
+                transform: translateY(90%);
+                margin-top: 100px;
+            }
+
+            .photo {
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+                opacity: 0;
+                transition: opacity 2s ease-in, transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+                transform: translateX(-60%);
+            }
+
+            .photo:hover {
+                transform: scale(1.1);
+                filter: brightness(0.7);
+                transform: translateX(-60%);
+            }
+
+            .photo-text {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: translate(-30%, -16.5em);
+                color: white;
+                font-size: 2vw;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            .photo-container:hover .photo-text {
+                opacity: 1;
+            }
+
+            .footer {
+                background-color: black;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+
+            .social-icons {
+                margin-top: 10px;
+            }
+
+            .social-icons a {
+                color: white;
+                margin: 0 10px;
+                font-size: 20px;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            .social-icons a:hover {
+                color: #7d0da3;
+            }
+
+            .text-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .photo-container {
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+                margin-left: 0;
+                transform: translateX(0);
+                transform: translateY(0);
+            }
+
+            .photo {
+                width: 50%;
+                height: auto;
+                margin: 0 auto;
+                display: block;
+            }
         }
     </style>
 </head>
+
 <body onload="fadeInHeadings()">
     <header>
         <nav>
-            <img src="pure_black_bg_logo.png" alt="photo thi yahan meri" class="image">
+            <img src="pure_black_bg_logo.png" alt="LOGO" class="image">
+            <button class="menu-button" id="menuButton">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="item-1">
                 <li><a href="index.html" class="underline-button1" style="color:white">Home</a></li>
                 <li><a href="about.html" style="color:white" class="underline-button">About Me!</a></li>
                 <li><a href="experiment.html" style="color:white" class="underline-button">Danger</a></li>
-                <li><a href="contact.html"  class="button">Contact Me</a></li>
+                <li><a href="contact.html" class="button">Contact Me</a></li>
             </ul>
         </nav>
     </header>
     <div class="text-container">
         <div>
             <h3>Hi I am,</h8>
-            <h1><a href="about.html" class="underline">Aditya Arora</a></h5>
-            <h4 id="anime">Website banata hua ek nadan parinda</h10>
+                <h1><a href="about.html" class="underline" style="color:black;">Aditya Arora</a></h5>
+                    <h4 id="anime">Website banata hua ek nadan parinda</h10>
         </div>
         <div class="photo-container">
             <img src="IMG_6566.jpeg" alt="photo thi yahan meri" class="photo">
@@ -272,8 +387,17 @@
                 }
             });
         }
+
         window.addEventListener('scroll', fadeInOnScroll);
         window.addEventListener('load', fadeInOnScroll);
+
+        // Toggle menu button and menu visibility
+        document.getElementById('menuButton').addEventListener('click', function () {
+            this.classList.toggle('open');
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('show');
+        });
     </script>
 </body>
+
 </html>
